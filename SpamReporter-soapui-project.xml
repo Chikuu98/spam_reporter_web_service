@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bca84542-19d5-4a7b-a3f7-29bd82132afb" activeEnvironment="Default" name="SpamReporter" resourceRoot="" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6b8acc32-3494-45ec-ba48-0f815e9402c5" wsaVersion="NONE" name="SpamReportServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://app/}SpamReportServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/SpamReportService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/SpamReportService?wsdl"><con:part><con:url>http://localhost:8080/SpamReportService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SpamReportServiceImplService" targetNamespace="http://app/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://app/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://app/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getReportCount" type="tns:getReportCount"/>
+      <xs:element name="getReportCountResponse" type="tns:getReportCountResponse"/>
+      <xs:element name="reportSpam" type="tns:reportSpam"/>
+      <xs:element name="reportSpamResponse" type="tns:reportSpamResponse"/>
+      <xs:complexType name="reportSpam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reportSpamResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getReportCount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getReportCountResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="reportSpam">
+    <wsdl:part element="tns:reportSpam" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getReportCount">
+    <wsdl:part element="tns:getReportCount" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reportSpamResponse">
+    <wsdl:part element="tns:reportSpamResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getReportCountResponse">
+    <wsdl:part element="tns:getReportCountResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SpamReportService">
+    <wsdl:operation name="reportSpam">
+      <wsdl:input message="tns:reportSpam" name="reportSpam"></wsdl:input>
+      <wsdl:output message="tns:reportSpamResponse" name="reportSpamResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReportCount">
+      <wsdl:input message="tns:getReportCount" name="getReportCount"></wsdl:input>
+      <wsdl:output message="tns:getReportCountResponse" name="getReportCountResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SpamReportServiceImplServiceSoapBinding" type="tns:SpamReportService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="reportSpam">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="reportSpam">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reportSpamResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReportCount">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getReportCount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getReportCountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SpamReportServiceImplService">
+    <wsdl:port binding="tns:SpamReportServiceImplServiceSoapBinding" name="SpamReportServiceImplPort">
+      <soap:address location="http://localhost:8080/SpamReportService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint></con:endpoints><con:operation id="bbd19084-c1c9-4706-85e8-fc396831ce08" isOneWay="false" action="" name="getReportCount" bindingOperationName="getReportCount" type="Request-Response" outputName="getReportCountResponse" inputName="getReportCount" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="926836ea-7d74-460d-ab94-86259986d740" name="Request 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:getReportCount>\r
+         <arg0>+94723470141</arg0>\r
+      </app:getReportCount>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/getReportCount"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5ac65fa6-730b-48b7-ad47-6d7e6a07aa91" name="Request 6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:getReportCount>\r
+         <arg0>+94723470142</arg0>\r
+      </app:getReportCount>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/getReportCount"/><con:wsrmConfig version="1.2"/></con:call><con:call id="eed2d85d-5eea-472d-9173-83ea3b07af24" name="Request 7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:getReportCount>\r
+         <arg0>+94723470143</arg0>\r
+      </app:getReportCount>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/getReportCount"/><con:wsrmConfig version="1.2"/></con:call><con:call id="8ca13b28-efbf-469f-8082-add1f3a246c9" name="Request 8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:getReportCount>\r
+         <arg0>+94723470144</arg0>\r
+      </app:getReportCount>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/getReportCount"/><con:wsrmConfig version="1.2"/></con:call><con:call id="3f70b0ad-6266-4db6-ae76-5c12c9eeb521" name="Request 9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:getReportCount>\r
+         <arg0>+94777123456</arg0>\r
+      </app:getReportCount>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/getReportCount"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="554c98e0-f031-4f42-ac35-134ac1cc90d7" isOneWay="false" action="" name="reportSpam" bindingOperationName="reportSpam" type="Request-Response" outputName="reportSpamResponse" inputName="reportSpam" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aa118b74-4ecd-47c5-915e-1a85fe6571af" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:reportSpam>\r\r
+         <arg0>+94723470141</arg0>\r
+         <arg1>E2347014</arg1>\r
+      </app:reportSpam>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/reportSpam"/><con:wsrmConfig version="1.2"/></con:call><con:call id="04396a5a-4d24-4544-9f69-4c5389ed254f" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:reportSpam>\r
+         <arg0>+94723470142</arg0>\r
+         <arg1>E2347014</arg1>\r
+      </app:reportSpam>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/reportSpam"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c3a662fc-f232-4ab2-8be6-04ca63344273" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:reportSpam>\r
+         <arg0>+94723470143</arg0>\r
+         <arg1>E2347014</arg1>\r
+      </app:reportSpam>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/reportSpam"/><con:wsrmConfig version="1.2"/></con:call><con:call id="67bb842f-36db-4719-867b-1995bab9484b" name="Request 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpamReportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:app="http://app/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <app:reportSpam>\r
+         <arg0>+94723470144</arg0>\r
+         <arg1></arg1>\r
+      </app:reportSpam>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://app/SpamReportService/reportSpam"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
